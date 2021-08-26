@@ -1,7 +1,7 @@
 import React from 'react';
 import TopSearch from './TopSearch';
 
-function Header() {
+function Header({ updateContent }) {
   return(
     <nav className="navbar has-background-dark" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
@@ -12,7 +12,7 @@ function Header() {
 
       <div className="navbar-end">
         <div className="navbar-item">
-          <TopSearch />
+          <TopSearch updateContent={updateContent} />
         </div>
       </div>
     </nav>
