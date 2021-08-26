@@ -22,6 +22,11 @@ function TopSearch({ updateContent }) {
     getCharacters(10, searchParams).then((response) => setCharacters(response.data.data.results));
   }
 
+  const handleClick = (char) => {
+    updateContent(char);
+    setShowDropdown(false);
+  }
+
   return(
     <div className="field is-relative">
       <p className="control has-icons-left">
@@ -46,7 +51,7 @@ function TopSearch({ updateContent }) {
           {
             characters.map((char) => {
               return (
-                <div key={char.id} onClick={() => updateContent(char)}>
+                <div key={char.id} onClick={() => handleClick(char)}>
                   <p className="m-4">
                     {char.name}
                   </p>
